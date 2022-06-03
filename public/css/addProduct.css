@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.page {
+    height: 100vh;   
+}
+
+body {
+    width: 100rem;
+    margin: 0 auto;
+    background-color: rgb(235, 230, 222);
+}
+
+body header .header-wrapper { 
+    font-family: 'Open Sans', sans-serif;
+    color: #E04F4F;   
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 2rem;
+
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+}
+
+body form header .header-wrapper .header-buttons .button {
+    font-family: 'Opan Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgb(235, 230, 222);
+    text-decoration: none;
+    text-align: center;
+
+    width: 8rem;
+    background: #E04F4F;
+  
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    
+    height: 2.5rem;
+  
+    padding: 12px;    
+    display: inline-block;
+}
+
+body form header .header-wrapper .header-buttons button {
+    font-family: 'Opan Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgb(235, 230, 222);
+
+    width: 10rem;
+    background: #E04F4F;
+  
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    
+    height: 2.5rem;
+  
+    padding: 12px;    
+    appearance: none;    
+}
+
+body main {
+    margin: 2rem 0 2rem;
+}
+
+fieldset {
+    padding: 2rem;
+}
+
+.input-wrapper {
+    gap: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.input-wrapper label {    
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.input-wrapper input, .input-wrapper select {    
+    width: 15rem;
+    background: #FAFAFC;
+    
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    
+    height: 56px;
+    
+    padding: 0 24px;
+    margin-bottom: 16px;
+    margin-left: 1rem;
+}
+
+.input-wrapper h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;    
+}
+
+body form fieldset .sku {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+body form fieldset .name, body form fieldset .price {    
+    margin-bottom: 1rem;
+}
+
+body form fieldset .type-switcher, body form fieldset .size, body form fieldset .dimension, body form fieldset .weight {    
+    margin-bottom: 2rem;
+}
+
+form fieldset .fieldset-area .sku .input-wrapper .sku-wrapper .error,
+form fieldset .fieldset-area .name .input-wrapper .error,
+form fieldset .fieldset-area .price .input-wrapper .error,
+form fieldset .fieldset-area .type-switcher .input-wrapper .error,
+form fieldset .fieldset-area .size .input-wrapper .error,
+form fieldset .fieldset-area .dimension .dimension-wrapper .error,
+form fieldset .fieldset-area .weight .input-wrapper .error {
+    color: #E04F4F;
+    font-size: medium;
+}
+
+.hide {
+    display:none;
+}
+
+body footer h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #E04F4F;
+    text-align: center;    
+    border-top: 2px solid black;
+    padding-top: 1rem;
+    gap: 4rem;
+}
