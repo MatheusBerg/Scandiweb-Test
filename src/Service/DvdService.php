@@ -2,7 +2,7 @@
 require_once('Service.php');
 require_once('../Database/Database.php');
 
-class DvdService extends Service {
+class DVDService extends Service {
     public $db;
 
     public function __construct(){

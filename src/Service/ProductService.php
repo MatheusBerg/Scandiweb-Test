@@ -1,7 +1,7 @@
 <?php 
 require_once('Service.php');
 require_once('BookService.php');
-require_once('DvdService.php');
+require_once('DVDService.php');
 require_once('FurnitureService.php');
 require_once('../Database/Database.php');
 
@@ -74,7 +74,7 @@ class ProductService extends Service {
     public function delete($product_skus){
 
         $bookService = new BookService();
-        $dvdService = new DvdService();
+        $dvdService = new DVDService();
         $furnitureService = new FurnitureService();        
 
         $pks = "'" . implode("', '", $product_skus)  . "'";

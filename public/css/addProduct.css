@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#product_form {
+    font-family: 'Open Sans', sans-serif;
+}
   
 .page {
     height: 100vh;   

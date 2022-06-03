@@ -3,7 +3,7 @@ document.getElementById('productType').onchange = function() {
     var FURNITUREinput = document.querySelector(".dimension");
     var BOOKinput = document.querySelector(".weight");
     
-    if (this.value == "Dvd") {        
+    if (this.value == "DVD") {        
         DVDinput.classList.remove("hide")
         FURNITUREinput.classList.add("hide") 
         BOOKinput.classList.add("hide")              
@@ -20,7 +20,7 @@ document.getElementById('productType').onchange = function() {
     }
 } 
 
-const form = document.getElementById('product-form');
+const form = document.getElementById('product_form');
 const sku = document.getElementById('sku');
 const name = document.getElementById('name');
 const price = document.getElementById('price');
@@ -141,7 +141,7 @@ function checkInputs() {
         setSuccessFor(price);
     }
 
-    if(productTypeValue === 'Dvd') {
+    if(productTypeValue === 'DVD') {
         if(sizeValue === '') {
             setErrorFor(size, 'Please, submit required data');
             errors.push(true);

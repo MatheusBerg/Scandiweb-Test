@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +20,7 @@
             <div class="header-wrapper">
                 <h1>Product List</h1>
                 <div class="header-buttons">                    
-                    <a href="addProduct.php" class="button">ADD</a>
+                    <a href="/add-product" class="button">ADD</a>
                     <button type="submit" id="delete-product-btn">MASS DELETE</button>                     
                 </div>
             </div>
@@ -42,20 +41,20 @@
                         ?>
               <div class="products">
                   
-                  <input name="checkbox[]" type="checkbox" value="<?php echo $row['sku']; ?>">
+                  <input class="delete-checkbox" name="checkbox[]" type="checkbox" value="<?php echo $row['sku']; ?>">
                   
                   <h6><?php echo $row['sku']?></h6>
                   <h6><?php echo $row['name']?></h6>
                   <h6><?php echo $row['price']." $"?></h6>
                   <?php
                 if($row['size']) {
-                    echo "<h6> Size: " .$row['size']. "</h6>";
+                    echo "<h6> Size: " .$row['size']. " MB" . "</h6>";
                 }
                 if($row['height']) {
                     echo "<h6> Dimension: " .$row['height']."x".$row['width']."x".$row['length']. "</h6>";
                 }
                 if($row['weight']) {
-                    echo "<h6> Weight: " .$row['weight']. "</h6>";
+                    echo "<h6> Weight: " .$row['weight']. "KG" . "</h6>";
                 } ?>                
                    
                 </div>

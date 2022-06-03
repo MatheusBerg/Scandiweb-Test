@@ -81,7 +81,7 @@ CREATE TABLE `product` (
   `sku` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` decimal(7,2) NOT NULL,
-  `type` enum('Dvd','Furniture','Book') NOT NULL
+  `type` enum('DVD','Furniture','Book') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -89,8 +89,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`sku`, `name`, `price`, `type`) VALUES
-('testandobook', 'testandobook', '100.00', 'Dvd'),
-('testandodvd', 'testandodvd', '100.00', 'Dvd'),
+('testandobook', 'testandobook', '100.00', 'DVD'),
+('testandodvd', 'testandodvd', '100.00', 'DVD'),
 ('testandofurniture', 'testandofurniture', '100.00', 'Furniture');
 
 --

@@ -1,7 +1,7 @@
 <?php
 require_once('Product.php');
 
-class Dvd extends Product {
+class DVD extends Product {
     private $size;
 
     public function __construct() {}

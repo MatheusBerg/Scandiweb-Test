@@ -25,7 +25,7 @@ class ProductController extends Controller {
             ];
 
             if ($this->productService->create($data, $data['productType'])) {
-                header("Location: index.php");
+                echo "<script>window.location.href = '/' </script>";
             } else {
                 echo "An error has ocurred!";
             }
@@ -49,7 +49,7 @@ class ProductController extends Controller {
 
                 if ($product_skus) {
                     if ($this->productService->delete($product_skus)) {
-                        header("Location: index.php");
+                        echo "<script>window.location.href = '/' </script>";
                     } else {
                         echo "An error has ocurred!";
                     }

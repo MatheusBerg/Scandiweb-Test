@@ -26,13 +26,13 @@
 
     ?>
     
-    <form action="" method="POST" onsubmit="return checkInputs()" id="product-form">
+    <form action="" method="POST" onsubmit="return checkInputs()" id="product_form">
         <header>
             <div class="header-wrapper">
                 <h1>Product Add</h1>
                 <div class="header-buttons">
-                    <button type="submit" name="submit">SAVE</button>
-                    <a href="index.php" class="button">CANCEL</a> 
+                    <button type="submit" name="submit">Save</button>
+                    <a href="/" class="button">Cancel</a> 
                 </div>
             </div>
         </header>
@@ -71,9 +71,9 @@
                 <label for="productType">Type Switcher</label>
                 <select name="productType" id="productType" >
                   <option disabled selected>Select</option>
-                  <option value="Dvd">Dvd</option>
-                  <option value="Furniture">Furniture</option>
-                  <option value="Book">Book</option>
+                  <option id="DVD" value="DVD">DVD</option>
+                  <option id="Furniture"value="Furniture">Furniture</option>
+                  <option id="Book"value="Book">Book</option>
                 </select>
                 <div class="error"></div>
               </div>

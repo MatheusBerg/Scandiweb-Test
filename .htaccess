@@ -1,0 +1,16 @@
+# HTID:19904564: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:19904564:
+
+<IfModule mod_rewrite.c>    
+    RewriteEngine On
+ 
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    
+    DirectoryIndex ./src/View/index.php  
+    
+    RewriteRule ^add-product ./src/View/addProduct.php [NC,L]
+      
+</IfModule>
