@@ -13,3 +13,5 @@ https://juniortest-matheus-berg.000webhostapp.com/
 
 ## How to install
 After download the files you need to make sure to place the application files and folders in your preferreble localhost server (I use XAMPP). Be aware of the modifications you need to do on "Database.php" to match your own localhost database and your own table.
+
+Esse é um exemplo de alteração no seu arquivo README.md feito por Valdemir Filho
