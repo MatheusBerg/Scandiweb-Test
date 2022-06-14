@@ -1,24 +1,28 @@
 document.getElementById('productType').onchange = function() {
-    var DVDinput = document.querySelector(".size");
-    var FURNITUREinput = document.querySelector(".dimension");
-    var BOOKinput = document.querySelector(".weight");
+    const DVDinput = document.querySelector(".size");
+    const FURNITUREinput = document.querySelector(".dimension");
+    const BOOKinput = document.querySelector(".weight");
     
-    if (this.value == "DVD") {        
+    actions[productType.value.toLowerCase()](DVDinput, FURNITUREinput, BOOKinput);
+} 
+
+const actions = {
+    dvd : (DVDinput, FURNITUREinput, BOOKinput) => {
         DVDinput.classList.remove("hide")
         FURNITUREinput.classList.add("hide") 
         BOOKinput.classList.add("hide")              
-    }           
-    if (this.value =="Furniture") {        
+    },
+    furniture: (DVDinput, FURNITUREinput, BOOKinput) => {
         FURNITUREinput.classList.remove("hide")
         DVDinput.classList.add("hide")
-        BOOKinput.classList.add("hide")
-    } 
-    if (this.value =="Book") {
+        BOOKinput.classList.add("hide")    
+    },
+    book: (DVDinput, FURNITUREinput, BOOKinput) => {
         BOOKinput.classList.remove("hide")
         FURNITUREinput.classList.add("hide")
-        DVDinput.classList.add("hide")
-    }
-} 
+        DVDinput.classList.add("hide")   
+    },
+}
 
 const form = document.getElementById('product_form');
 const sku = document.getElementById('sku');
