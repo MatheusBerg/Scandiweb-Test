@@ -2,23 +2,23 @@
 require_once('Service.php');
 require_once('../Database/Database.php');
 
-class BookService extends Service {
+class DVDService extends Service {
     public $db;
-    
+
     public function __construct(){
         $this->db = new Database();
     }
 
     public function create($productModel, $data){
 
-        $productModel->setWeight($data['weight']);
+        $productModel->setSize($data['size']);
 
-        $query = "INSERT INTO book (sku, weight) 
+        $query = "INSERT INTO dvd (sku, size)
                             VALUES (
-                                    '" . $productModel->getSku() . "', 
-                                    " . $productModel->getWeight() . "
+                                    '" . $productModel->getSku() . "',
+                                    " . $productModel->getSize() . "
                             );";
-    
+        
         $sql = $this->db->conn->query($query);
 
         if($sql){
@@ -38,13 +38,13 @@ class BookService extends Service {
 
     public function delete($skus){
         
-        $sql = $this->db->conn->query("DELETE FROM book WHERE sku IN ($skus)");
+        $sql = $this->db->conn->query("DELETE FROM dvd WHERE sku IN ($skus)");
 
         if($sql){
             return true;
         }else{
             return false;
-        }     
+        }
     }
-        
+
 }

@@ -40,16 +40,6 @@ class FurnitureService extends Service {
       return $results;
   }
 
-  public function findById($id){
-      $this->db->query('SELECT * FROM product WHERE id = :id');
-      $this->db->bind(':id', $id);
-      if($this->db->execute()){
-          return true;
-      }else{
-          return false;
-      }
-  }
-
   public function delete($skus){
       
       $sql = $this->db->conn->query("DELETE FROM furniture WHERE sku IN ($skus)");

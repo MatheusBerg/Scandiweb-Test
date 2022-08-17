@@ -6,7 +6,14 @@ class Furniture extends Product {
     private $width;
     private $length;
 
-    public function __construct() {}   
+    public function __construct() {
+        
+    }  
+    
+    public function getInfo(){
+        $parentInfo = parent::getInfo();
+        return "{$parentInfo} <br>Dimension: {$this->height}x{$this->width}x{$this->length}";        
+    }
         
     public function getHeight() {
         return $this->height;

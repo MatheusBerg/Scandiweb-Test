@@ -31,32 +31,24 @@
                 
                 
                 <?php
-                include_once '../Controller/ProductController.php';
+                include_once '../Controller/ProductController.php';                
                 $productController = new ProductController();
-                $rows = $productController->findAll(); 
+                $datas = $productController->findAll(); 
                 $productController->delete();                              
+                ?>                
                 
-                if(!empty($rows)){
-                    foreach($rows as $row){ 
+                <?php
+                
+
+                if(!empty($datas)){
+                    foreach($datas as $data){ 
                         ?>
               <div class="products">
                   
-                  <input class="delete-checkbox" name="checkbox[]" type="checkbox" value="<?php echo $row['sku']; ?>">
-                  
-                  <h6><?php echo $row['sku']?></h6>
-                  <h6><?php echo $row['name']?></h6>
-                  <h6><?php echo $row['price']." $"?></h6>
-                  <?php
-                if($row['size']) {
-                    echo "<h6> Size: " .$row['size']. " MB" . "</h6>";
-                }
-                if($row['height']) {
-                    echo "<h6> Dimension: " .$row['height']."x".$row['width']."x".$row['length']. "</h6>";
-                }
-                if($row['weight']) {
-                    echo "<h6> Weight: " .$row['weight']. "KG" . "</h6>";
-                } ?>                
-                   
+                  <input class="delete-checkbox" name="checkbox[]" type="checkbox" value="<?php echo $data->getSku(); ?>">
+                                  
+                  <h6><?php echo $data->getInfo()?></h6> 
+                                   
                 </div>
                 
                 <?php

@@ -4,8 +4,15 @@ class Product {
     private $sku;
     private $name;
     private $price;
+    private $type;
 
-    public function __construct() {}
+    public function __construct(){
+        
+    }
+    
+    public function getInfo(){
+        return "{$this->sku} <br>{$this->name} <br>{$this->price} $";        
+    }
     
     public function getSku() {
         return $this->sku;

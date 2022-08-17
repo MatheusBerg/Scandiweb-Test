@@ -4,6 +4,9 @@ require_once('BookService.php');
 require_once('DVDService.php');
 require_once('FurnitureService.php');
 require_once('../Database/Database.php');
+require_once('../Model/Book.php');
+require_once('../Model/DVD.php');
+require_once('../Model/Furniture.php');
 
 class ProductService extends Service {
     public $db;
@@ -48,22 +51,55 @@ class ProductService extends Service {
         }
         
         
-    }
+    }    
 
     public function findAll(){
         $data = null;
 
-        $query = "SELECT product.sku, name, price, type, size, weight, height, width, length 
-                    FROM product 
-                    LEFT JOIN dvd ON product.sku = dvd.sku
-                    LEFT JOIN book ON product.sku = book.sku
-                    LEFT JOIN furniture ON product.sku = furniture.sku";
+        $bookQuery = "SELECT * FROM product LEFT JOIN book ON product.sku = book.sku WHERE product.type = 'book'";
+        $dvdQuery = "SELECT * FROM product LEFT JOIN dvd ON product.sku = dvd.sku WHERE product.type = 'dvd'";
+        $furnitureQuery = "SELECT * FROM product LEFT JOIN furniture ON product.sku = furniture.sku WHERE product.type = 'furniture'";
+        
+        $sqlBook = $this->db->conn->query($bookQuery);
+        $sqlDVD = $this->db->conn->query($dvdQuery);
+        $sqlFurniture = $this->db->conn->query($furnitureQuery);
 
-        $sql = $this->db->conn->query($query);
+        if ($sqlBook) {
+            while ($row = mysqli_fetch_assoc($sqlBook)) {
+                $book = new Book();
+                $book->setSku($row['sku']);
+                $book->setName($row['name']);
+                $book->setPrice($row['price']);
+                $book->setType($row['type']);
+                $book->setWeight($row['weight']);
+                $data[] = $book;
+            }
+        }
 
-        if ($sql) {
-            while ($row = mysqli_fetch_assoc($sql)) {
-                $data[] = $row;
+        if ($sqlDVD) {
+            while ($row = mysqli_fetch_assoc($sqlDVD)) {
+                $dvd = new DVD();
+                $dvd->setSku($row['sku']);
+                $dvd->setName($row['name']);
+                $dvd->setPrice($row['price']);
+                $dvd->setType($row['type']);
+                $dvd->setSize($row['size']);
+                $data[] = $dvd;
+            }
+        }
+
+        if ($sqlFurniture) {
+            while ($row = mysqli_fetch_assoc($sqlFurniture)) {
+                $furniture = new Furniture();
+                $furniture->setSku($row['sku']);
+                $furniture->setName($row['name']);
+                $furniture->setPrice($row['price']);
+                $furniture->setType($row['type']);
+                $furniture->setHeight($row['height']);
+                $furniture->setWidth($row['width']);
+                $furniture->setLength($row['length']);
+
+                $data[] = $furniture;
             }
         }
 
